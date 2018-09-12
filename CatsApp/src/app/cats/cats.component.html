@@ -1,0 +1,26 @@
+<h2>My Cats</h2>
+
+<div>
+  <!--<label>cat name:
+    <input #CatName />
+  </label>
+   (click) passes input value to add() and then clears the input 
+  <button (click)="add(catName.value); catName.value=''">
+    add
+  </button>-->
+
+  <ul class="cats">
+    <li *ngFor="let cat of cats">
+      <a routerLink="/detail/{{cat.id}}">
+        <span class="badge">{{cat.id}}</span> {{cat.name}}
+      </a>
+      <button class="delete" title="delete hero"
+        (click)="delete(cat)">x</button>
+    </li>
+  </ul>
+  <a routerLink = "cats"> cats component</a>
+  <router-outlet></router-outlet>
+</div>
+
+
+
